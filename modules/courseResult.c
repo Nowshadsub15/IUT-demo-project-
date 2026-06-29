@@ -12,6 +12,24 @@ CourseResult createCourseResult(Course *course, double marks)
     return result;
 }
 
+CourseResult createCompletedCourseResult(Course *course, double marks)
+{
+    CourseResult result;
+    result.course = course;
+    result.marks = marks;
+    result.completed = 1;
+    return result;
+}
+
+CourseResult createIncompleteCourseResult(Course *course)
+{
+    CourseResult result;
+    result.course = course;
+    result.marks = 0.0;
+    result.completed = 0;
+    return result;
+}
+
 void sortCourseResultsBySemester(CourseResult results[], int n_results)
 {
     for (int i = 0; i < n_results - 1; i++)
